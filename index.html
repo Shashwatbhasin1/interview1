@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(31, 102, 160);
+        }
+
+        .pic img {
+            height: 100px;
+            width: 200px;
+            margin-left: 100px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        .links ul li {
+            display: inline-block;
+
+        }
+
+        .links ul li a {
+            color: black;
+        }
+
+        .links {
+            flex: 1;
+            text-align: right;
+            margin-right: 100px;
+        }
+
+        .information {
+            height: 1000px;
+            width: 1000px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        #circle {
+            height: 1000px;
+            width: 1000px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(0deg);
+            transition: 1s;
+        }
+
+        #circle img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .one {
+            bottom: 450px;
+            left: 0px;
+            position: absolute;
+            transform: rotate(-180deg);
+        }
+
+        .two {
+
+            left: 350px;
+            top: 100px;
+            position: absolute;
+            transform: rotate(-90deg);
+        }
+
+        .three {
+
+            right: 10px;
+            bottom: 450px;
+            position: absolute;
+        }
+
+        .four {
+            right: 385px;
+            bottom: 100px;
+            position: absolute;
+            transform: rotate(-270deg);
+
+        }
+
+        .feature {
+            display: flex;
+            color: white;
+        }
+
+        .feature div {
+            margin-left: 10px;
+        }
+
+        .mobile {
+            width: 200px;
+            position: absolute;
+            top: 52%;
+            left: 35%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .controls {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 10%;
+            text-align: center;
+        }
+
+        .controls h2 {
+            margin: 15px 0px;
+            color: #fff;
+        }
+
+        #UpBtn {
+            width: 15px;
+            cursor: pointer;
+        }
+
+        #DwnBtn {
+            width: 15px;
+            cursor: pointer;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="pic">
+            <img src="https://www.xda-developers.com/files/2019/02/Realme-Logo_2-1024x683.png">
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="information">
+        <img class="mobile" src="images/mobile.png">
+        <div id="circle">
+            <div class="feature one">
+                <img src="images/camera.png">
+                <div>
+                    <h1>Camera</h1>
+                    <p>12MP,WIDEANGLECAMERA</p>
+                </div>
+            </div>
+
+            <div class="feature two">
+                <img src="images/processor.png">
+                <div>
+                    <h1>Processor</h1>
+                    <p>OCTAPROCESSOR</p>
+                </div>
+
+            </div>
+            <div class="feature three">
+
+                <img src="images/display.png">
+                <div>
+                    <h1>Display</h1>
+                    <p>LIQUIDCRYSTALDISPLAY</p>
+                </div>
+            </div>
+            <div class="feature four">
+                <img src="images/battery.png">
+                <div>
+                    <h1>Battery</h1>
+                    <p>5000mAhBattery</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="controls">
+        <img src="images/arrow.png" id="UpBtn">
+        <h2>Features</h2>
+        <img src="images/arrow.png" id="DwnBtn">
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var UpBtn = document.getElementById("UpBtn");
+        var DwnBtn = document.getElementById("DwnBtn");
+
+        var rotateValue = circle.style.transform;
+
+        UpBtn.onclick = function () {
+            rotateSum = rotateValue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+
+        }
+        DwnBtn.onclick = function () {
+            rotateSum = rotateValue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+
+        }
+    </script>
+</body>
+
+</html>
